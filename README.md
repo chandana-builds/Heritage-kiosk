@@ -5,6 +5,9 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-amber?style=for-the-badge)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-heritage--kiosk.onrender.com-brightgreen?style=for-the-badge&logo=render)](https://heritage-kiosk.onrender.com/)
+
+> 🌐 **Live Demo**: [https://heritage-kiosk.onrender.com/](https://heritage-kiosk.onrender.com/)
 
 An immersive, touch-optimized digital kiosk web application designed for archaeological museums, heritage landmarks, and cultural exhibition halls. Built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and modern web accessibility standards.
 
