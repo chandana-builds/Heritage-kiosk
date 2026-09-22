@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #0c0a09;
+  --foreground: #f5f5f4;
+  --gold-primary: #d97706;
+  --gold-light: #fbbf24;
+  --gold-dark: #92400e;
+  --kiosk-scale: 1;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars for touch kiosks */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1917;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #44403c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #78716c;
+}
+
+/* Kiosk Specific Utilities */
+.kiosk-gold-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #78350f 100%);
+}
+
+.kiosk-gold-text {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kiosk-card-glass {
+  background: rgba(28, 25, 23, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(217, 119, 6, 0.22);
+}
+
+.kiosk-card-glass:hover {
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 0 28px -5px rgba(217, 119, 6, 0.25);
+}
+
+.kiosk-glow {
+  box-shadow: 0 0 35px -5px rgba(217, 119, 6, 0.35);
+}
+
+/* Accessibility Modes */
+.accessibility-large-font {
+  font-size: 1.15rem;
+}
+
+.accessibility-large-font h1 {
+  font-size: 2.75rem !important;
+}
+
+.accessibility-large-font h2 {
+  font-size: 2rem !important;
+}
+
+.accessibility-large-font p,
+.accessibility-large-font span,
+.accessibility-large-font button {
+  font-size: 1.125rem !important;
+}
+
+.accessibility-high-contrast {
+  --background: #000000;
+  --foreground: #ffffff;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-high-contrast .kiosk-card-glass {
+  background: #000000 !important;
+  border: 2px solid #fbbf24 !important;
+  color: #ffffff !important;
+}
+
+.accessibility-high-contrast button {
+  border: 2px solid #ffffff !important;
+}
+
+/* 3D Perspective Scene Container */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+/* Gentle Kiosk Attract Animation */
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 8s ease-in-out infinite;
+}
