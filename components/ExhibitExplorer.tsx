@@ -33,8 +33,8 @@ export const ExhibitExplorer: React.FC<ExhibitExplorerProps> = ({
 
   const t = UI_TRANSLATIONS[language];
 
-  const eras = ['All', 'Ancient', 'Classical', 'Medieval', 'Early Modern'];
-  const categories = ['All', 'Architecture', 'Sculpture', 'Relic', 'Monument'];
+  const eras = ['All', 'Ancient', 'Classical', 'Medieval', 'Early Modern', 'Modern'];
+  const categories = ['All', 'Architecture', 'Sculpture', 'Relic', 'Monument', 'Manuscript'];
 
   const filteredExhibits = useMemo(() => {
     return EXHIBITS.filter((exhibit) => {

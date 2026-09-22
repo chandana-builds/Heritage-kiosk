@@ -31,7 +31,12 @@ export const ExhibitModal: React.FC<ExhibitModalProps> = ({
   onOpenMobileQR
 }) => {
   const [activeTab, setActiveTab] = useState<'overview' | '3d'>('overview');
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
   const t = UI_TRANSLATIONS[language];
+
+  const currentImage = exhibit.galleryImages && exhibit.galleryImages.length > 0
+    ? exhibit.galleryImages[selectedImageIndex] || exhibit.galleryImages[0]
+    : { url: exhibit.imageUrl, caption: exhibit.title };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto animate-fade-in">
@@ -43,42 +48,41 @@ export const ExhibitModal: React.FC<ExhibitModalProps> = ({
             <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 text-xs font-mono font-bold uppercase">
               {exhibit.era} Era • {exhibit.period}
             </span>
-            <span className="hidden sm:inline text-xs text-stone-400 font-mono">
-              Ref: {exhibit.id}
+            <span className="px-3 py-1 rounded-full bg-stone-800 text-stone-300 text-xs font-mono">
+              {exhibit.category}
             </span>
           </div>
 
-          {/* Tab Switcher & Close */}
           <div className="flex items-center gap-2">
-            <div className="flex items-center bg-stone-800/80 p-1 rounded-xl border border-stone-700">
+            {/* View Switcher Tabs */}
+            <div className="flex items-center bg-stone-950 p-1 rounded-xl border border-stone-800">
               <button
                 onClick={() => setActiveTab('overview')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
                   activeTab === 'overview'
-                    ? 'bg-amber-600 text-stone-950 shadow'
-                    : 'text-stone-300 hover:text-white'
+                    ? 'bg-amber-600 text-stone-950'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
-                <Headphones className="w-3.5 h-3.5" />
-                <span>Overview & Audio</span>
+                <Info className="w-3.5 h-3.5" />
+                <span>Exhibit Profile</span>
               </button>
               <button
                 onClick={() => setActiveTab('3d')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer flex items-center gap-1.5 ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${
                   activeTab === '3d'
-                    ? 'bg-amber-600 text-stone-950 shadow'
-                    : 'text-stone-300 hover:text-white'
+                    ? 'bg-amber-600 text-stone-950'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
-                <Box className="w-3.5 h-3.5" />
-                <span>3D Inspect</span>
+                <Maximize2 className="w-3.5 h-3.5" />
+                <span>3D Explorer</span>
               </button>
             </div>
 
             <button
               onClick={onClose}
-              className="w-10 h-10 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white flex items-center justify-center transition border border-stone-700 cursor-pointer"
-              title={t.close}
+              className="p-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -96,27 +100,60 @@ export const ExhibitModal: React.FC<ExhibitModalProps> = ({
               {/* Hero Showcase Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 
-                {/* Visual Image with Vignette */}
-                <div className="lg:col-span-6 relative rounded-2xl overflow-hidden border border-amber-500/30 bg-stone-950 min-h-[280px] sm:min-h-[340px] group">
-                  <img
-                    src={exhibit.imageUrl}
-                    alt={exhibit.title}
-                    className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-black/30" />
-                  
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-xs bg-stone-900/90 text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 font-medium">
-                      {exhibit.material}
-                    </span>
-                    <button
-                      onClick={() => setActiveTab('3d')}
-                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs shadow-lg cursor-pointer"
-                    >
-                      <Maximize2 className="w-3.5 h-3.5" />
-                      <span>Interactive 3D</span>
-                    </button>
+                {/* Visual Image with Vignette & Multi-Photo Gallery */}
+                <div className="lg:col-span-6 flex flex-col space-y-3">
+                  <div className="relative rounded-2xl overflow-hidden border border-amber-500/30 bg-stone-950 h-[300px] sm:h-[360px] group shadow-xl">
+                    <img
+                      src={currentImage.url}
+                      alt={currentImage.caption || exhibit.title}
+                      className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-black/30" />
+                    
+                    {currentImage.caption && (
+                      <div className="absolute top-3 left-3 right-3">
+                        <p className="text-[11px] sm:text-xs text-stone-200 bg-stone-950/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-stone-800 line-clamp-2 shadow-md">
+                          {currentImage.caption}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                      <span className="text-xs bg-stone-900/90 text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 font-medium">
+                        {exhibit.material}
+                      </span>
+                      <button
+                        onClick={() => setActiveTab('3d')}
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-stone-950 font-bold text-xs shadow-lg cursor-pointer"
+                      >
+                        <Maximize2 className="w-3.5 h-3.5" />
+                        <span>Interactive 3D</span>
+                      </button>
+                    </div>
                   </div>
+
+                  {/* Multi-Photo Gallery Strip */}
+                  {exhibit.galleryImages && exhibit.galleryImages.length > 1 && (
+                    <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+                      {exhibit.galleryImages.map((img, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setSelectedImageIndex(idx)}
+                          className={`relative rounded-xl overflow-hidden border-2 h-16 w-24 shrink-0 transition-all cursor-pointer ${
+                            selectedImageIndex === idx
+                              ? 'border-amber-500 scale-102 shadow-md shadow-amber-900/50 ring-2 ring-amber-400/40'
+                              : 'border-stone-800 opacity-60 hover:opacity-100'
+                          }`}
+                        >
+                          <img
+                            src={img.url}
+                            alt={img.caption}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Exhibit Details & Provenance */}

@@ -22,10 +22,11 @@ export interface Exhibit {
   period: string;
   year: string;
   location: string;
-  category: 'Architecture' | 'Sculpture' | 'Relic' | 'Inscription' | 'Monument';
+  category: 'Architecture' | 'Sculpture' | 'Relic' | 'Inscription' | 'Monument' | 'Manuscript';
   material: string;
   dimensions: string;
   imageUrl: string;
+  galleryImages?: { url: string; caption: string }[];
   fallbackGradient: string;
   audioDuration: string;
   audioTranscript: string;
@@ -384,6 +385,497 @@ export const EXHIBITS: Exhibit[] = [
         }
       ]
     }
+  },
+  {
+    id: 'ambedkar-constitution-manuscript',
+    title: 'Original Calligraphed Constitution of India',
+    nativeTitle: 'भारतीय संविधान मूल हस्तलिखित पांडुलिपि',
+    subtitle: 'Preamble & Sovereign Charter Framed by Dr. B.R. Ambedkar',
+    era: 'Modern',
+    period: 'Constituent Assembly of India',
+    year: '1949–1950 CE',
+    location: 'Parliament House, New Delhi',
+    category: 'Manuscript',
+    material: 'Handmade Mill Parchment, Black Ink & Gold Leaf Illuminations',
+    dimensions: '45.7 cm × 30.5 cm × 231 pages',
+    imageUrl: '/images/exhibits/ambedkar-constitution-manuscript.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/ambedkar-constitution-manuscript.jpg',
+        caption: 'Illuminated Preamble calligraphed by Prem Behari Narain Raizada with artwork by Beohar Rammanohar Sinha'
+      },
+      {
+        url: '/images/exhibits/ambedkar-drafting-presentation.jpg',
+        caption: 'Dr. Babasaheb Ambedkar, Chairman of the Drafting Committee, presenting the final draft on 25 November 1949'
+      },
+      {
+        url: '/images/exhibits/ambedkar-deekshabhoomi.jpg',
+        caption: 'Deekshabhoomi Stupa in Nagpur commemorating Dr. Ambedkar’s civil rights renaissance'
+      }
+    ],
+    fallbackGradient: 'from-amber-950 via-slate-900 to-indigo-950',
+    audioDuration: '2m 35s',
+    audioTranscript: 'You are examining the supreme manuscript of modern India: the original handwritten Constitution. Dr. B.R. Ambedkar, as Chairman of the Drafting Committee, steered the creation of this monumental document guaranteeing liberty, equality, fraternity, and justice. The manuscript was not printed with movable type; every syllable was calligraphed by master scribe Prem Behari Narain Raizada with No. 303 nibs in flowing italic style. The borders were illustrated by artist Beohar Rammanohar Sinha and Nandalal Bose of Santiniketan. The original copy is preserved inside a hermetically sealed helium-filled vitrine in the Library of the Parliament of India.',
+    shortDescription: 'The 231-page original calligraphed Constitution of India, architected by Dr. B.R. Ambedkar with Santiniketan art.',
+    longDescription: 'Completed on 26 November 1949 and coming into full effect on 26 January 1950, the Constitution of India is the longest written national charter in the world. Dr. Bhimrao Ramji Ambedkar championed fundamental rights, abolition of untouchability, affirmative empowerment, and constitutional remedies as the "heart and soul" of the republic. The parchment pages were crafted from pure handmade cotton rag paper manufactured at the Forest Research Institute, Dehradun, designed to endure for over a thousand years.',
+    provenance: 'Drafted by the committee chaired by Dr. B.R. Ambedkar; unanimously adopted by the Constituent Assembly; preserved in the Parliament Library, New Delhi.',
+    highlights: [
+      'Hand-calligraphed in flowing italic by Prem Behari Narain Raizada without any typesetting',
+      'Decorated with 22 miniature illustrations chronicling 5,000 years of Indian civilizational history',
+      'Signed in original ink by Dr. B.R. Ambedkar, Jawaharlal Nehru, and all 284 assembly members'
+    ],
+    tags: ['Constitution', 'Dr. Ambedkar', 'Manuscript', 'Modern', 'Democracy', 'Calligraphy'],
+    artifact3D: {
+      color: '#1e3a8a',
+      wireframeColor: '#f59e0b',
+      geometryType: 'cube',
+      hotspots: [
+        {
+          id: 'preamble',
+          title: 'The Preamble Calligraphy',
+          description: 'Masterfully penned in italic script declaring India a Sovereign Socialist Secular Democratic Republic.',
+          x: 50,
+          y: 45
+        },
+        {
+          id: 'borders',
+          title: 'Santiniketan Illuminations',
+          description: 'Ornate borders featuring Vedic motifs, Bull Capital, and floral arabesques by Beohar Rammanohar Sinha.',
+          x: 82,
+          y: 20
+        },
+        {
+          id: 'signatures',
+          title: 'Drafting Committee Signatures',
+          description: 'Historical ink signatures led by Dr. B.R. Ambedkar and Constituent Assembly delegates.',
+          x: 48,
+          y: 80
+        }
+      ]
+    }
+  },
+  {
+    id: 'ambedkar-deekshabhoomi',
+    title: 'Deekshabhoomi Stupa & Memorial',
+    nativeTitle: 'दीक्षाभूमी नागपूर',
+    subtitle: 'Sacred Monument of Social Emancipation & Wisdom',
+    era: 'Modern',
+    period: 'Modern Republic of India',
+    year: '1956–2001 CE',
+    location: 'Nagpur, Maharashtra',
+    category: 'Monument',
+    material: 'Dholpur Sandstone, Granite & Marble',
+    dimensions: '120 ft (36.5 m) height, 120 ft diameter',
+    imageUrl: '/images/exhibits/ambedkar-deekshabhoomi.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/ambedkar-deekshabhoomi.jpg',
+        caption: 'Grand hemispherical Dholpur sandstone stupa at Deekshabhoomi, Nagpur'
+      },
+      {
+        url: '/images/exhibits/ambedkar-constitution-manuscript.jpg',
+        caption: 'Dr. Ambedkar’s masterpiece: The original handwritten Constitution of India'
+      }
+    ],
+    fallbackGradient: 'from-amber-950 via-stone-900 to-indigo-950',
+    audioDuration: '2m 10s',
+    audioTranscript: 'Deekshabhoomi in Nagpur is the largest hollow Buddhist stupa in Asia. It marks the sacred spot where, on 14 October 1956 (Ashoka Vijayadashami), Dr. B.R. Ambedkar and over 500,000 adherents renounced discriminatory caste hierarchies to embrace Buddhism. Taking the 22 vows of ethical conduct and rational equality, Babasaheb initiated a non-violent renaissance of social dignity that transformed modern India.',
+    shortDescription: 'Asia’s largest hollow stupa commemorating Dr. B.R. Ambedkar’s historic social awakening and mass revival.',
+    longDescription: 'Designed by architect Sheo Dan Mal, the monumental stupa blends ancient Sanchi Buddhist aesthetics with modern architectural grandeur. Clad in pink Dholpur sandstone, the circular hall accommodates thousands of visitors under an uninterrupted hemispherical dome. A sacred bronze relic of the Buddha and personal memorial items of Babasaheb Ambedkar are enshrined in the central sanctum.',
+    provenance: 'Constructed under the Dr. Babasaheb Ambedkar Smarak Samiti on the historic conversion grounds of 1956.',
+    highlights: [
+      'Largest hollow stupa in Asia with an uninterrupted 120-foot hemispherical dome',
+      'Site of the 1956 historic mass spiritual awakening led by Dr. B.R. Ambedkar',
+      'Enshrines the 22 vows of compassion, equality, and rationalist morality'
+    ],
+    tags: ['Ambedkar', 'Monument', 'Deekshabhoomi', 'Buddhism', 'Modern', 'Nagpur'],
+    artifact3D: {
+      color: '#d97706',
+      wireframeColor: '#38bdf8',
+      geometryType: 'sphere',
+      hotspots: [
+        {
+          id: 'dome',
+          title: 'Sandstone Stupa Dome',
+          description: 'Hollow hemispherical dome spanning 120 feet without internal support columns.',
+          x: 50,
+          y: 35
+        },
+        {
+          id: 'sanctum',
+          title: 'Central Relic Hall',
+          description: 'Enshrines Buddha statues and Dr. Ambedkar’s commemorative urn and archival exhibits.',
+          x: 50,
+          y: 72
+        }
+      ]
+    }
+  },
+  {
+    id: 'nehru-manuscripts',
+    title: 'The Discovery of India & Tryst with Destiny Manuscripts',
+    nativeTitle: 'डिस्कवरी ऑफ इंडिया मूल हस्तलिपि',
+    subtitle: 'Foundational Chronicles of Modern Indian Identity',
+    era: 'Modern',
+    period: 'Freedom Struggle & Dawn of Independence',
+    year: '1944–1947 CE',
+    location: 'Ahmednagar Fort & New Delhi',
+    category: 'Manuscript',
+    material: 'Handwritten Ink on Prison Folios & Bond Paper',
+    dimensions: 'Over 1,000 handwritten folios in bound albums',
+    imageUrl: '/images/exhibits/nehru-signing-constitution.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/nehru-signing-constitution.jpg',
+        caption: 'Prime Minister Jawaharlal Nehru signing the original calligraphed Constitution of India'
+      },
+      {
+        url: '/images/exhibits/nehru-teen-murti-bhavan.jpg',
+        caption: 'Teen Murti Bhavan in New Delhi, residence and national memorial repository of Nehru’s papers'
+      },
+      {
+        url: '/images/exhibits/nehru-anand-bhavan.jpg',
+        caption: 'Anand Bhavan in Prayagraj, the ancestral Nehru mansion and nerve-centre of the independence movement'
+      }
+    ],
+    fallbackGradient: 'from-blue-950 via-stone-900 to-amber-950',
+    audioDuration: '2m 20s',
+    audioTranscript: 'Between 1942 and 1945, while imprisoned by British authorities in the remote fortress of Ahmednagar, Jawaharlal Nehru penned over a thousand pages by hand. This mammoth manuscript became "The Discovery of India"—a lyrical synthesis of five millennia of philosophy, art, science, and resilience. Displayed alongside is Nehru’s original speech transcript of "Tryst with Destiny," delivered at midnight on 14–15 August 1947, featuring his own last-minute handwritten edits.',
+    shortDescription: 'Nehru’s 1,000-page prison manuscript of "The Discovery of India" and his handwritten "Tryst with Destiny" speech draft.',
+    longDescription: 'Nehru’s literary output combined statesman vision with poetic prose. Written with pen in prison conditions without access to a full library, "The Discovery of India" traced the civilizational continuity from the Indus Valley through the Upanishads, Ashoka, the Golden Age, Mughal synthesis, to the freedom struggle. In his "Tryst with Destiny" draft, Nehru crossed out "date with destiny" in pencil to write "tryst with destiny", composing one of the most iconic political addresses in human history.',
+    provenance: 'Preserved and catalogued by the Nehru Memorial Museum & Library (Pradhanmantri Sangrahalaya), Teen Murti Bhavan, New Delhi.',
+    highlights: [
+      'Handwritten while in solitary confinement inside the military quarters of Ahmednagar Fort',
+      'Contains Nehru’s handwritten margin corrections on the historic "Tryst with Destiny" draft',
+      'Seminal philosophical text articulating the concept of "Unity in Diversity"'
+    ],
+    tags: ['Nehru', 'Discovery of India', 'Manuscript', 'Modern', 'Freedom Struggle'],
+    artifact3D: {
+      color: '#0284c7',
+      wireframeColor: '#f59e0b',
+      geometryType: 'cube',
+      hotspots: [
+        {
+          id: 'tryst-opening',
+          title: 'Opening Midnight Inscription',
+          description: '"Long years ago we made a tryst with destiny..." penned in Nehru’s distinctive hand.',
+          x: 48,
+          y: 35
+        },
+        {
+          id: 'ahmednagar-notes',
+          title: 'Ahmednagar Prison Notebooks',
+          description: 'Over 1,000 closely written leaves documenting Indian history and art.',
+          x: 52,
+          y: 75
+        }
+      ]
+    }
+  },
+  {
+    id: 'nehru-teen-murti-bhavan',
+    title: 'Teen Murti Bhavan & Anand Bhavan',
+    nativeTitle: 'तीन मूर्ति भवन एवं आनंद भवन',
+    subtitle: 'Cradle of Freedom Struggle & Prime Ministerial Residence',
+    era: 'Modern',
+    period: 'Colonial Era to Modern Republic',
+    year: '1930–1964 CE',
+    location: 'New Delhi & Prayagraj (Allahabad)',
+    category: 'Monument',
+    material: 'Sandstone, Teakwood, Stucco & Classical Colonnades',
+    dimensions: '30-acre estate with neoclassical porticoes',
+    imageUrl: '/images/exhibits/nehru-teen-murti-bhavan.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/nehru-teen-murti-bhavan.jpg',
+        caption: 'Neoclassical facade of Teen Murti Bhavan, New Delhi'
+      },
+      {
+        url: '/images/exhibits/nehru-anand-bhavan.jpg',
+        caption: 'Anand Bhavan in Prayagraj, historic home of the Nehru family and Congress Working Committee'
+      },
+      {
+        url: '/images/exhibits/nehru-signing-constitution.jpg',
+        caption: 'Historical photograph of Prime Minister Nehru signing the Indian Constitution'
+      }
+    ],
+    fallbackGradient: 'from-emerald-950 via-stone-900 to-amber-950',
+    audioDuration: '2m 15s',
+    audioTranscript: 'Teen Murti Bhavan in New Delhi, designed by British architect Robert Tor Russell, served as the residence of the Commander-in-Chief before becoming the home of India’s first Prime Minister, Jawaharlal Nehru, for sixteen historic years. Here, foundational policies on non-alignment, atomic energy, space research, and modern institutes of technology were debated. In Prayagraj stands Anand Bhavan, the Nehru family’s ancestral mansion where Mahatma Gandhi, Sardar Patel, and the Congress Working Committee orchestrated the civil disobedience movement.',
+    shortDescription: 'Historic residences in New Delhi and Prayagraj where the architecture of modern India’s democracy was forged.',
+    longDescription: 'Both Anand Bhavan and Teen Murti Bhavan stand as pilgrimage sites of India’s modern history. Teen Murti gets its name from the memorial sculpture of three bronze cavalrymen by Leonard Jennings commemorating the Jodhpur, Hyderabad, and Mysore Lancers. Within its halls, Nehru’s private study, bedroom, gifts from world leaders, and an immense archive of state papers and manuscripts are preserved in pristine original condition.',
+    provenance: 'Dedicated to the nation; now housing the Pradhanmantri Sangrahalaya, Nehru Memorial Library, and Planetarium.',
+    highlights: [
+      'Neoclassical sandstone architecture housing Nehru’s original study and private library',
+      'Anand Bhavan in Prayagraj was donated to the nation in 1970 by Indira Gandhi',
+      'Center of global diplomacy during the Non-Aligned Movement summits'
+    ],
+    tags: ['Nehru', 'Monument', 'Teen Murti', 'Anand Bhavan', 'Modern', 'Architecture'],
+    artifact3D: {
+      color: '#065f46',
+      wireframeColor: '#fbbf24',
+      geometryType: 'cylinder',
+      hotspots: [
+        {
+          id: 'portico',
+          title: 'Classical Sandstone Peristyle',
+          description: 'Neoclassical portico greeting state dignitaries and world leaders.',
+          x: 50,
+          y: 40
+        },
+        {
+          id: 'three-lancers',
+          title: 'Teen Murti Statues',
+          description: 'Memorial bronze cavalrymen sculpted by Leonard Jennings.',
+          x: 50,
+          y: 78
+        }
+      ]
+    }
+  },
+  {
+    id: 'gandhi-manuscripts',
+    title: 'Original Manuscripts of Mahatma Gandhi',
+    nativeTitle: 'सत्य के प्रयोग एवं हिन्द स्वराज हस्तलिखित पांडुलिपि',
+    subtitle: 'Handwritten Doctrines of Satyagraha & Universal Ahimsa',
+    era: 'Modern',
+    period: 'Satyagraha & Independence Movement',
+    year: '1909–1928 CE',
+    location: 'Sabarmati Ashram & National Gandhi Museum',
+    category: 'Manuscript',
+    material: 'Handwritten Ink on SS Kildonan Castle Stationery & Handspun Khadi Paper',
+    dimensions: '271 handwritten pages (Hind Swaraj)',
+    imageUrl: '/images/exhibits/gandhi-writing-manuscript.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/gandhi-writing-manuscript.jpg',
+        caption: 'Mahatma Gandhi writing his letters and philosophical manuscripts in 1942'
+      },
+      {
+        url: '/images/exhibits/gandhi-god-is-truth-manuscript.jpg',
+        caption: 'Gandhi’s iconic handwritten signed note: "God is Truth"'
+      },
+      {
+        url: '/images/exhibits/gandhi-sabarmati-ashram.jpg',
+        caption: 'Hriday Kunj cottage at Sabarmati Ashram, Ahmedabad'
+      }
+    ],
+    fallbackGradient: 'from-amber-950 via-stone-900 to-orange-950',
+    audioDuration: '2m 25s',
+    audioTranscript: 'Between 13 and 22 November 1909, aboard the steamship SS Kildonan Castle sailing from London to South Africa, Mohandas Karamchand Gandhi wrote furiously. When his right hand grew exhausted, he switched to his left hand to finish the 271-page manuscript of "Hind Swaraj" (Indian Home Rule). Later at Sabarmati Ashram, he penned his monumental autobiography, "The Story of My Experiments with Truth". His neat handwriting and unvarnished honesty redefined the moral compass of political resistance worldwide.',
+    shortDescription: 'Gandhi’s original bilingual handwritten manuscripts of "Hind Swaraj" and his spiritual autobiography.',
+    longDescription: 'Written on ship’s stationery with ink and fountain pen, "Hind Swaraj" is regarded as Gandhi’s philosophical manifesto, critiquing industrialized greed and championing moral self-rule (Swaraj) and active non-violence (Satyagraha). At Sabarmati, Gandhi penned weekly chapters of "The Story of My Experiments with Truth" in Gujarati for the journal Navajivan, translated into English by his close secretary Mahadev Desai.',
+    provenance: 'Preserved in the archives of Sabarmati Ashram Preservation and Memorial Trust and National Gandhi Museum, New Delhi.',
+    highlights: [
+      'Written ambidextrously: when his right hand cramped, Gandhi continued writing with his left hand',
+      'Original handwritten sheet proclaiming the philosophical maxim "God is Truth"',
+      'Recognized by UNESCO’s Memory of the World Register as world heritage literature'
+    ],
+    tags: ['Gandhi', 'Manuscript', 'Hind Swaraj', 'Satyagraha', 'Ahimsa', 'Modern'],
+    artifact3D: {
+      color: '#92400e',
+      wireframeColor: '#fde047',
+      geometryType: 'cylinder',
+      hotspots: [
+        {
+          id: 'ambidextrous-folio',
+          title: 'Left-Handed Script Folio',
+          description: 'Written when Gandhi’s right arm was paralyzed by muscle cramps on the Kildonan Castle.',
+          x: 48,
+          y: 40
+        },
+        {
+          id: 'truth-maxim',
+          title: '"God is Truth" Manuscript Note',
+          description: 'Historic signed axiom encapsulating Gandhi’s ontological philosophy.',
+          x: 52,
+          y: 75
+        }
+      ]
+    }
+  },
+  {
+    id: 'gandhi-sabarmati-ashram',
+    title: 'Sabarmati Ashram (Hriday Kunj)',
+    nativeTitle: 'साबरमती आश्रम (हृदय कुंज)',
+    subtitle: 'Sanctuary of Non-Violence & Launchpad of the Salt March',
+    era: 'Modern',
+    period: 'Indian Independence Movement',
+    year: '1917–1930 CE',
+    location: 'Ahmedabad, Gujarat',
+    category: 'Monument',
+    material: 'Vernacular Earth, Wood, Baked Terracotta Tiles & Lime Plaster',
+    dimensions: '36-acre tranquil ashram riverbank complex',
+    imageUrl: '/images/exhibits/gandhi-sabarmati-ashram.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/gandhi-sabarmati-ashram.jpg',
+        caption: 'Hriday Kunj, the dwelling of Mahatma Gandhi and Kasturba at Sabarmati Ashram'
+      },
+      {
+        url: '/images/exhibits/gandhi-writing-manuscript.jpg',
+        caption: 'Mahatma Gandhi working at his writing desk'
+      },
+      {
+        url: '/images/exhibits/gandhi-god-is-truth-manuscript.jpg',
+        caption: 'Original handwritten note "God is Truth" preserved in the ashram archives'
+      }
+    ],
+    fallbackGradient: 'from-amber-950 via-stone-800 to-yellow-950',
+    audioDuration: '2m 15s',
+    audioTranscript: 'Perched on the tranquil banks of the Sabarmati River between a jail and a crematorium, Sabarmati Ashram was founded by Mahatma Gandhi in 1917. The small, tiled cottage known as Hriday Kunj was the personal dwelling of Gandhi and Kasturba. From these serene verandahs, Gandhi launched the world-renowned Salt Satyagraha on 12 March 1930, marching 241 miles to Dandi to break the British salt tax, vowing never to return until India was free.',
+    shortDescription: 'Gandhi’s riverside hermitage and the historic starting point of the 1930 Dandi Salt March.',
+    longDescription: 'Designed with profound simplicity using locally sourced timber, whitewashed mud brick, and clay roof tiles, Sabarmati Ashram embodied the Gandhian ideal of voluntary simplicity and self-reliance. Hriday Kunj preserves Gandhi’s simple round spectacles, writing desk (bajoth), wooden sandals (paduka), and original spinning wheels (charkha). Designed by famed architect Charles Correa in 1963, the Gandhi Smarak Sangrahalaya adjacent to Hriday Kunj houses thousands of original letters, photographs, and manuscripts.',
+    provenance: 'Preserved by the Sabarmati Ashram Preservation and Memorial Trust; designated a national monument of India.',
+    highlights: [
+      'Epoch-defining departure point of the 241-mile Dandi Salt March in 1930',
+      'Hriday Kunj preserves Gandhi’s original low writing desk and portable charkha',
+      'Charles Correa-designed open-air museum housing over 30,000 original letters'
+    ],
+    tags: ['Gandhi', 'Sabarmati', 'Dandi March', 'Monument', 'Gujarat', 'Modern'],
+    artifact3D: {
+      color: '#78350f',
+      wireframeColor: '#fbbf24',
+      geometryType: 'cube',
+      hotspots: [
+        {
+          id: 'bajoth-desk',
+          title: 'Gandhi’s Writing Desk (Bajoth)',
+          description: 'Low wooden floor desk where thousands of national letters and articles were drafted.',
+          x: 45,
+          y: 65
+        },
+        {
+          id: 'verandah',
+          title: 'Riverfront Open Verandah',
+          description: 'Where morning and evening multifaith community prayers took place.',
+          x: 55,
+          y: 35
+        }
+      ]
+    }
+  },
+  {
+    id: 'kalam-manuscripts',
+    title: 'Dr. Kalam’s Scientific Manuscripts & Rocket Flight Notes',
+    nativeTitle: 'डॉ. कलाम के वैज्ञानिक नोट्स एवं पांडुलिपि',
+    subtitle: 'Handwritten Trajectory Calculus, SLV-3 Logs & Wings of Fire',
+    era: 'Modern',
+    period: 'Indian Space & Missile Renaissance',
+    year: '1979–2002 CE',
+    location: 'ISRO Thumba, VSSC & Rameswaram',
+    category: 'Manuscript',
+    material: 'Technical Grid Paper, Blue Ballpoint Ink & Typewritten Annotated Folios',
+    dimensions: 'Engineering notebooks, flight logs & draft typescripts',
+    imageUrl: '/images/exhibits/kalam-house-rameswaram.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/kalam-house-rameswaram.jpg',
+        caption: 'The ancestral House of Kalam in Rameswaram, preserving his early books and scientific models'
+      },
+      {
+        url: '/images/exhibits/kalam-national-memorial.jpg',
+        caption: 'Dr. A.P.J. Abdul Kalam National Memorial in Rameswaram'
+      },
+      {
+        url: '/images/exhibits/kalam-memorial-exterior.jpg',
+        caption: 'Full-scale SLV-3 and missile scale exhibits flanking the memorial'
+      }
+    ],
+    fallbackGradient: 'from-blue-950 via-slate-900 to-amber-950',
+    audioDuration: '2m 30s',
+    audioTranscript: 'Before he became the beloved 11th President of India, Dr. A.P.J. Abdul Kalam served as Project Director of India’s first Satellite Launch Vehicle (SLV-3) at ISRO. In his meticulously kept engineering journals, Kalam recorded intricate rocket aerodynamic equations, stage separation sequences, and propellant weight calculations in neat cursive. Following the historic 18 July 1980 launch that placed the Rohini satellite into orbit, Kalam authored "Wings of Fire" and "India 2020: A Vision for the New Millennium," articulating how science and youth could propel India into a developed nation.',
+    shortDescription: 'Dr. Kalam’s original handwritten SLV-3 flight trajectory notebooks and inspirational "Wings of Fire" drafts.',
+    longDescription: 'Known universally as the "People’s President" and "Missile Man of India," Dr. Avul Pakir Jainulabdeen Abdul Kalam lived an austere life dedicated to science and education. His notebooks reveal deep mathematical rigor paired with poetic vision. Across these folios are Kalam’s diagrams of four-stage solid propellant launch vehicles, mission failure recovery logs, and his personal motto: "Dream is not that which you see while sleeping, it is something that does not let you sleep." His drafts of "India 2020" laid out blueprints for technology-driven societal transformation.',
+    provenance: 'Preserved by the Defense Research and Development Organisation (DRDO), ISRO archives, and the House of Kalam in Rameswaram.',
+    highlights: [
+      'Handwritten engineering trajectory calculations from the landmark 1980 SLV-3 Rohini launch',
+      'Original annotated typescripts of his autobiography "Wings of Fire"',
+      'Dr. Kalam’s handwritten poems and visionary addresses delivered to millions of school students'
+    ],
+    tags: ['Abdul Kalam', 'Manuscript', 'ISRO', 'Space', 'Wings of Fire', 'Modern'],
+    artifact3D: {
+      color: '#0369a1',
+      wireframeColor: '#38bdf8',
+      geometryType: 'cylinder',
+      hotspots: [
+        {
+          id: 'slv3-thrust-curve',
+          title: 'SLV-3 Thrust & Trajectory Curves',
+          description: 'Calculations for four-stage solid propellant staging into near-Earth orbit.',
+          x: 50,
+          y: 35
+        },
+        {
+          id: 'vision-manifesto',
+          title: 'India 2020 Blueprints',
+          description: 'Handwritten roadmaps on education, energy independence, and critical technologies.',
+          x: 50,
+          y: 75
+        }
+      ]
+    }
+  },
+  {
+    id: 'kalam-national-memorial',
+    title: 'Dr. A.P.J. Abdul Kalam National Memorial',
+    nativeTitle: 'டாக்டர் ஏ. பி. ஜே. அப்துல் கலாம் தேசிய நினைவகம்',
+    subtitle: 'Architectural Ode to the Missile Man & People’s President',
+    era: 'Modern',
+    period: '21st Century Republic of India',
+    year: '2017 CE',
+    location: 'Peikarumbu, Rameswaram, Tamil Nadu',
+    category: 'Monument',
+    material: 'Jaisalmer Yellow Marble, Chettinad Stone & Granite',
+    dimensions: '2.11 acres site with 500-meter missile-inspired landscape',
+    imageUrl: '/images/exhibits/kalam-national-memorial.jpg',
+    galleryImages: [
+      {
+        url: '/images/exhibits/kalam-national-memorial.jpg',
+        caption: 'Main facade of the Dr. A.P.J. Abdul Kalam National Memorial at Rameswaram'
+      },
+      {
+        url: '/images/exhibits/kalam-memorial-exterior.jpg',
+        caption: 'Grand central dome inspired by Rashtrapati Bhavan and India Gate portals'
+      },
+      {
+        url: '/images/exhibits/kalam-house-rameswaram.jpg',
+        caption: 'House of Kalam on Mosque Street in Rameswaram'
+      }
+    ],
+    fallbackGradient: 'from-amber-900 via-stone-900 to-sky-950',
+    audioDuration: '2m 20s',
+    audioTranscript: 'Erected on the island where young Kalam once delivered newspapers along the sea coast, the Dr. A.P.J. Abdul Kalam National Memorial at Peikarumbu, Rameswaram, is an architectural marvel built in record time by the DRDO. The entrance portal mirrors the iconic India Gate, while the magnificent central dome was inspired by the Rashtrapati Bhavan. Within its sunlit galleries stand life-size bronze statues of Dr. Kalam playing his beloved veena, replicas of the Agni missile, and thousands of personal artifacts illustrating his journey from humble beginnings to the presidency.',
+    shortDescription: 'The monumental national memorial in Rameswaram blending India Gate and Rashtrapati Bhavan architecture.',
+    longDescription: 'Inaugurated on 27 July 2017 by Prime Minister Narendra Modi, the memorial honors Dr. Kalam’s multi-faceted life as aerospace scientist, author, mentor, and President. Crafted with radiant yellow marble from Jaisalmer, Rajasthan, and stone carved by artisans from Bengaluru and Karaikudi, the complex features four dedicated galleries celebrating his youth in Rameswaram, his ISRO and DRDO missile milestones, his presidency, and his final inspiring hours lecturing at IIM Shillong.',
+    provenance: 'Engineered and constructed by the Defense Research and Development Organisation (DRDO); maintained by the Ministry of Defense.',
+    highlights: [
+      'Central dome inspired by Rashtrapati Bhavan and entrance gates modeled on India Gate',
+      'Life-sized bronze statue of Dr. Kalam playing the Rudra Veena in his study',
+      'Full-scale scale replicas of SLV-3, Agni, and Prithvi launch vehicles'
+    ],
+    tags: ['Abdul Kalam', 'Monument', 'Rameswaram', 'Memorial', 'DRDO', 'Modern'],
+    artifact3D: {
+      color: '#d97706',
+      wireframeColor: '#fbbf24',
+      geometryType: 'sphere',
+      hotspots: [
+        {
+          id: 'central-dome',
+          title: 'Rashtrapati Bhavan Cupola',
+          description: 'Ornate yellow marble dome evoking the presidential palace where Dr. Kalam resided.',
+          x: 50,
+          y: 35
+        },
+        {
+          id: 'missile-spires',
+          title: 'Aerospace Pylons',
+          description: 'Monolithic markers commemorating ISRO’s SLV-3 and DRDO missile innovations.',
+          x: 50,
+          y: 80
+        }
+      ]
+    }
   }
 ];
 
@@ -487,6 +979,36 @@ export const EPOCHS: Epoch[] = [
         description: 'Massive stone astronomical instruments constructed in Jaipur to calibrate planetary tables with bare-eye observation.'
       }
     ]
+  },
+  {
+    id: 'epoch-modern',
+    name: 'Modern Nation & Freedom Renaissance',
+    range: '1857 CE – Present',
+    epochEra: 'Freedom Struggle to the Space Age',
+    description: 'From the moral awakening of Satyagraha and the handwritten drafting of the Constitution to satellite rocketry and nuclear self-reliance.',
+    icon: 'Milestone',
+    milestones: [
+      {
+        year: '1909 CE',
+        event: 'Gandhi Pens Hind Swaraj Manuscript',
+        description: 'Mahatma Gandhi writes his 271-page philosophical manifesto on moral self-rule aboard the SS Kildonan Castle.'
+      },
+      {
+        year: '1944 CE',
+        event: 'Nehru Writes The Discovery of India',
+        description: 'Imprisoned at Ahmednagar Fort, Jawaharlal Nehru synthesizes 5,000 years of civilizational continuity.'
+      },
+      {
+        year: '1949 CE',
+        event: 'Dr. Ambedkar Delivers Final Constitution Draft',
+        description: 'The Constituent Assembly adopts the original calligraphed Constitution enshrining liberty, equality, and justice.'
+      },
+      {
+        year: '1980 CE',
+        event: 'Dr. Kalam Directs Historic SLV-3 Launch',
+        description: 'Dr. A.P.J. Abdul Kalam successfully deploys the Rohini satellite into orbit, launching India into the global space club.'
+      }
+    ]
   }
 ];
 
@@ -555,6 +1077,58 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctAnswer: 0,
     explanation: 'Historically, the stone wheels were capable of rotating on their granite axles during annual temple festivals before being cemented in place for safety by conservators.',
     relatedExhibitId: 'hampi-stone-chariot'
+  },
+  {
+    id: 6,
+    question: 'Who was the Chief Architect and Drafting Committee Chairman of the calligraphed Constitution of India?',
+    options: [
+      'Dr. Rajendra Prasad',
+      'Dr. B.R. Ambedkar',
+      'Sardar Vallabhbhai Patel',
+      'Maulana Abul Kalam Azad'
+    ],
+    correctAnswer: 1,
+    explanation: 'Dr. B.R. Ambedkar served as Chairman of the Drafting Committee, spearheading the monumental creation of the Constitution of India.',
+    relatedExhibitId: 'ambedkar-constitution-manuscript'
+  },
+  {
+    id: 7,
+    question: 'Where was Jawaharlal Nehru imprisoned when he wrote the 1,000-page manuscript of "The Discovery of India"?',
+    options: [
+      'Cellular Jail, Andaman',
+      'Yerwada Central Jail',
+      'Ahmednagar Fort',
+      'Naini Central Prison'
+    ],
+    correctAnswer: 2,
+    explanation: 'Nehru wrote "The Discovery of India" between 1942 and 1945 during his imprisonment by the British inside Ahmednagar Fort.',
+    relatedExhibitId: 'nehru-manuscripts'
+  },
+  {
+    id: 8,
+    question: 'Aboard which steamship did Mahatma Gandhi write the original manuscript of "Hind Swaraj" in 1909?',
+    options: [
+      'SS Rajputana',
+      'SS Kildonan Castle',
+      'SS City of Venice',
+      'INS Vikrant'
+    ],
+    correctAnswer: 1,
+    explanation: 'Gandhi penned the 271-page manuscript of "Hind Swaraj" aboard the SS Kildonan Castle while voyaging from London to South Africa.',
+    relatedExhibitId: 'gandhi-manuscripts'
+  },
+  {
+    id: 9,
+    question: 'Before serving as India’s 11th President, Dr. A.P.J. Abdul Kalam was Project Director for which historic space launch vehicle?',
+    options: [
+      'GSLV Mk III',
+      'Chandrayaan-1',
+      'SLV-3 (Rohini Satellite)',
+      'Mangalyaan Mars Orbiter'
+    ],
+    correctAnswer: 2,
+    explanation: 'Dr. A.P.J. Abdul Kalam led India’s first Satellite Launch Vehicle (SLV-3) project, putting the Rohini satellite into orbit on 18 July 1980.',
+    relatedExhibitId: 'kalam-manuscripts'
   }
 ];
 
@@ -572,7 +1146,8 @@ export const VISITOR_INFO = {
     { zone: 'Zone A', name: 'Indus-Saraswati Proto-Historic Gallery', items: '24 Artifacts' },
     { zone: 'Zone B', name: 'Mauryan & Buddhist Edicts Hall', items: '18 Artifacts' },
     { zone: 'Zone C', name: 'Imperial Chola Bronze Sanctuary', items: '32 Sculptures' },
-    { zone: 'Zone D', name: 'Medieval Architectural Engineering Courtyard', items: '14 Scale Models' }
+    { zone: 'Zone D', name: 'Medieval Architectural Engineering Courtyard', items: '14 Scale Models' },
+    { zone: 'Zone E', name: 'Modern Renaissance, Manuscripts & Memorials Hall', items: '16 Manuscripts & Relics' }
   ]
 };
 

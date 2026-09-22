@@ -16,8 +16,14 @@ An immersive, touch-optimized digital kiosk web application designed for archaeo
 ## ✨ Key Features
 
 ### 🏺 1. Curated Heritage Gallery
-- **Multi-Epoch Filtering**: Categorized across *Ancient Antiquity, Classical Golden Age, Medieval Kingdoms,* and *Early Modern Renaissance*.
-- **Category Filter**: Quickly isolate *Architecture, Sculptures, Sacred Relics,* and *Monuments*.
+- **Multi-Epoch Filtering**: Categorized across *Ancient Antiquity, Classical Golden Age, Medieval Kingdoms, Early Modern Renaissance,* and *Modern Nation & Freedom Renaissance*.
+- **Category Filter**: Quickly isolate *Architecture, Sculptures, Sacred Relics, Monuments,* and *Manuscripts*.
+- **Modern Manuscripts & Memorials**:
+  - **Dr. B.R. Ambedkar**: Original 231-page Calligraphed Constitution of India Manuscript & Deekshabhoomi Stupa (Nagpur).
+  - **Jawaharlal Nehru**: 1,000-page prison manuscript of *The Discovery of India*, handwritten *Tryst with Destiny* draft, and Teen Murti / Anand Bhavan.
+  - **Mahatma Gandhi**: Handwritten manuscripts of *Hind Swaraj* (written aboard SS Kildonan Castle), *The Story of My Experiments with Truth*, and Sabarmati Ashram (Hriday Kunj).
+  - **Dr. A.P.J. Abdul Kalam**: Technical flight notebooks (SLV-3 Rohini launch), *Wings of Fire* manuscripts, and the National Memorial at Rameswaram.
+- **Multi-Photo Interactive Gallery**: High-definition thumbnail switcher in exhibit view to seamlessly toggle between original manuscripts and sacred memorial architecture.
 - **Instant Search**: Real-time querying across titles, periods, locations, materials, and tags.
 - **Rich Curatorial Records**: Detailed historical context, provenance records, dimensions, and architectural highlights for every piece.
 
